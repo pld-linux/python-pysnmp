@@ -11,7 +11,6 @@ Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
 # Source0-md5:	a570c2c15904d4c27e846617a462600f
 URL:		http://pysnmp.sourceforge.net/
-BuildRequires:	rpm-pythonprov
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python-modules
 BuildArch:	noarch
