@@ -10,6 +10,7 @@ Release:	3
 License:	BSD-like
 Group:		Libraries/Python
 Source0:	ftp://ftp.glas.net/users/ilya/tools/pysnmp/%{module}-%{version}.tar.gz
+# Source0-md5:	1410ff9824f07dafe441510d9a8fc92d
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	python >= 2.2.1
