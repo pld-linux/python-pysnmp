@@ -42,13 +42,11 @@ python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
-gzip -9fn README CHANGES LICENSE
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc html *.gz
+%doc html README CHANGES LICENSE
 %{py_sitedir}/%{module}/*py[co]
 %{_examplesdir}/%{name}
