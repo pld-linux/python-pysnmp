@@ -9,7 +9,7 @@ Version:	3.3.4
 Release:	1
 License:	BSD-like
 Group:		Libraries/Python
-Source0:	http://download.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
 # Source0-md5:  44f19ecd8b36adaa1c801e25f1b355e8
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpm-pythonprov
@@ -41,7 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
@@ -49,7 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc %{_docdir}/%{name}-%{version}/* 
 %doc COMPATIBILITY README CHANGES LICENSE docs/*
 %{py_sitedir}/%{module}/*
 %{_examplesdir}/%{name}-%{version}
