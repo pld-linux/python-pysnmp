@@ -5,12 +5,12 @@
 Summary:	Python SNMP Toolkit
 Summary(pl):	Narzêdzia SNMP dla Pythona
 Name:		python-%{module}
-Version:	3.3.6
-Release:	2
+Version:	3.4.2
+Release:	1
 License:	BSD-like
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
-# Source0-md5:	f5b9bc60a55bb6461ffcb951e883fd87
+# Source0-md5:	a570c2c15904d4c27e846617a462600f
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	python >= 2.2.1
@@ -38,12 +38,18 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+python setup.py install \
+   --optimize=2 \
+   --root=$RPM_BUILD_ROOT
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+for i in examples/*
+do
+	install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/`basename $i`
+	install $i/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/`basename $i`/
+done
 
 %clean
 rm -rf $RPM_BUILD_ROOT
