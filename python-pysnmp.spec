@@ -12,7 +12,7 @@ Group:		Libraries/Python
 Source0:	ftp://ftp.glas.net/users/ilya/tools/pysnmp/%{module}-%{version}.tar.gz
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpm-pythonprov
-%requires_eq    python-modules
+%pyrequires_eq    python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
