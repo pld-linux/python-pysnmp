@@ -8,7 +8,7 @@ Name:		python-%{module}
 Version:	1.6.5
 Release:	1
 License:	BSD-style
-Group:		Development/Libraries
+Group:		Development/Languages/Python
 Source0:	ftp://ftp.glas.net/users/ilya/tools/pysnmp/%{module}-%{version}.tar.gz
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpm-pythonprov
@@ -16,12 +16,10 @@ BuildRequires:	rpm-pythonprov
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 This is a set of tools required by the Structure of Management
 Information (SMI v.1 & v.2) to be used in Python programming
 environment. Primarily, they are SNMP engine and MIB compiler.
-
 
 %description -l pl
 Zestaw narzêdzi pozwalaj±cych pisaæ w Pythonie programy korzystaj±ce z
@@ -38,10 +36,8 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 
-PYTHONPATH=$RPM_BUILD_ROOT%{py_sitedir}
-export PYTHONPATH
-
 python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
