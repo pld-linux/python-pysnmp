@@ -6,7 +6,7 @@ Summary:	Python SNMP Toolkit
 Summary(pl):	Narzêdzia SNMP dla Pythona
 Name:		python-%{module}
 Version:	1.6.5
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Libraries/Python
 Source0:	ftp://ftp.glas.net/users/ilya/tools/pysnmp/%{module}-%{version}.tar.gz
