@@ -1,6 +1,6 @@
-%include /usr/lib/rpm/macros.python
+%include	/usr/lib/rpm/macros.python
 
-%define  module  pysnmp
+%define		module	pysnmp
 
 Summary:	Python SNMP Toolkit
 Summary(pl):	Narzêdzia SNMP dla Pythona
@@ -12,7 +12,8 @@ Group:		Libraries/Python
 Source0:	ftp://ftp.glas.net/users/ilya/tools/pysnmp/%{module}-%{version}.tar.gz
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpm-pythonprov
-%pyrequires_eq    python-modules
+BuildRequires:	python >= 2.2.1
+%pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
