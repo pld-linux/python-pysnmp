@@ -5,12 +5,11 @@
 Summary:	Python SNMP Toolkit
 Summary(pl):	Narzêdzia SNMP dla Pythona
 Name:		python-%{module}
-Version:	1.6.5
-Release:	3
+Version:	3.3.4
+Release:	1
 License:	BSD-like
 Group:		Libraries/Python
-Source0:	ftp://ftp.glas.net/users/ilya/tools/pysnmp/%{module}-%{version}.tar.gz
-# Source0-md5:	1410ff9824f07dafe441510d9a8fc92d
+Source0:	http://download.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	python >= 2.2.1
@@ -40,14 +39,16 @@ rm -rf $RPM_BUILD_ROOT
 
 python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
-install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc html README CHANGES LICENSE
-%{py_sitedir}/%{module}/*py[co]
-%{_examplesdir}/%{name}
+#%doc %{_docdir}/%{name}-%{version}/* 
+%doc COMPATIBILITY README CHANGES LICENSE docs/*
+%{py_sitedir}/%{module}/*
+%{_examplesdir}/%{name}-%{version}
