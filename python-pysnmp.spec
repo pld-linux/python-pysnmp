@@ -5,7 +5,7 @@ Summary:	SNMP engine for Python
 Summary(pl):	Obs³uga SNMP dla Pythona
 Name:		python-%{module}
 Version:	3.4.2
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
