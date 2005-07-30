@@ -4,12 +4,12 @@
 Summary:	SNMP engine for Python
 Summary(pl):	Obs³uga SNMP dla Pythona
 Name:		python-%{module}
-Version:	3.4.2
-Release:	3
+Version:	4.1.3a
+Release:	1
 License:	BSD-like
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
-# Source0-md5:	a570c2c15904d4c27e846617a462600f
+# Source0-md5:	9b882e6da36f3bef98124e29bb1d7c69
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python-modules
@@ -67,18 +67,14 @@ python setup.py install \
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-for i in examples/*
-do
-	install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/`basename $i`
-	install $i/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/`basename $i`/
-done
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COMPATIBILITY README CHANGES LICENSE
+%doc README CHANGES TODO docs/mibs/*
 %{py_sitescriptdir}/%{module}/*
 
 %files doc
