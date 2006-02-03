@@ -65,7 +65,7 @@ python setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
-find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
+find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" '!' -path '*/v4/smi/mibs/*' | xargs rm
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
