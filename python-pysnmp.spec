@@ -13,6 +13,7 @@ Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	python >= 2.2.1
 %pyrequires_eq	python-modules
+Requires:	python-pyasn1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
