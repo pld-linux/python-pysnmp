@@ -2,7 +2,7 @@
 %define		module	pysnmp
 
 Summary:	SNMP engine for Python
-Summary(pl):	Obs³uga SNMP dla Pythona
+Summary(pl.UTF-8):   ObsÅ‚uga SNMP dla Pythona
 Name:		python-%{module}
 Version:	4.1.5a
 Release:	1
@@ -22,35 +22,35 @@ This is a set of tools required by the Structure of Management
 Information (SMI v.1 & v.2) to be used in Python programming
 environment. Primarily, they are SNMP engine and MIB compiler.
 
-%description -l pl
-Zestaw narzêdzi pozwalaj±cych pisaæ w Pythonie programy korzystaj±ce z
-protoko³u SNMP. Zawiera procedury s³u¿±ce do zarz±dzania obiektami MIB
+%description -l pl.UTF-8
+Zestaw narzÄ™dzi pozwalajÄ…cych pisaÄ‡ w Pythonie programy korzystajÄ…ce z
+protokoÅ‚u SNMP. Zawiera procedury sÅ‚uÅ¼Ä…ce do zarzÄ…dzania obiektami MIB
 (Management Information Base), opisanych przez normy SMI (Structure of
 Management Information) v1 i v2.
 
 %package doc
 Summary:	Documentation for Python pysnmp module
-Summary(pl):	Dokumentacja do modu³u Pythona pysnmp
+Summary(pl.UTF-8):   Dokumentacja do moduÅ‚u Pythona pysnmp
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 
 %description doc
 This package contains documentation files for Python pysnmp module.
 
-%description doc -l pl
-Ten pakiet zwiera dokumentacjê do modu³u Pythona pysnmp.
+%description doc -l pl.UTF-8
+Ten pakiet zwiera dokumentacjÄ™ do moduÅ‚u Pythona pysnmp.
 
 %package examples
 Summary:	Example programs for Python pysnmp module
-Summary(pl):	Programy przyk³adowe do modu³u Pythona pysnmp
+Summary(pl.UTF-8):   Programy przykÅ‚adowe do moduÅ‚u Pythona pysnmp
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 
 %description examples
 This package contains example programs for Python pysnmp module.
 
-%description examples -l pl
-Ten pakiet zawiera przyk³adowe programy do modu³u Pythona pysnmp.
+%description examples -l pl.UTF-8
+Ten pakiet zawiera przykÅ‚adowe programy do moduÅ‚u Pythona pysnmp.
 
 %prep
 %setup -q -n %{module}-%{version}
