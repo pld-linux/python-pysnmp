@@ -2,7 +2,7 @@
 %define		module	pysnmp
 
 Summary:	SNMP engine for Python
-Summary(pl.UTF-8):   Obsługa SNMP dla Pythona
+Summary(pl.UTF-8):	Obsługa SNMP dla Pythona
 Name:		python-%{module}
 Version:	4.1.5a
 Release:	1
@@ -30,7 +30,7 @@ Management Information) v1 i v2.
 
 %package doc
 Summary:	Documentation for Python pysnmp module
-Summary(pl.UTF-8):   Dokumentacja do modułu Pythona pysnmp
+Summary(pl.UTF-8):	Dokumentacja do modułu Pythona pysnmp
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 
@@ -42,7 +42,7 @@ Ten pakiet zwiera dokumentację do modułu Pythona pysnmp.
 
 %package examples
 Summary:	Example programs for Python pysnmp module
-Summary(pl.UTF-8):   Programy przykładowe do modułu Pythona pysnmp
+Summary(pl.UTF-8):	Programy przykładowe do modułu Pythona pysnmp
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 
