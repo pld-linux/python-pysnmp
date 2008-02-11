@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README CHANGES TODO docs/mibs/*
 %attr(755,root,root) %{_bindir}/*
 %{py_sitescriptdir}/%{module}
-#%{py_sitescriptdir}/pysnmp-*.egg-info
+%{py_sitescriptdir}/pysnmp-*.egg-info
 
 %files doc
 %defattr(644,root,root,755)
