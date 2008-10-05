@@ -9,7 +9,7 @@ Release:	1
 License:	BSD-like
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
-# Source0-md5:	e00e58cbaba2f6ea4d9d3deeda95aa1c
+# Source0-md5:	bc8b01d35349fe45536dd5ecee010c38
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	python >= 1:2.4
 BuildRequires:	rpm-pythonprov
