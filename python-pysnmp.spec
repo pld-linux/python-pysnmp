@@ -11,11 +11,11 @@ Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pysnmp/%{module}-%{version}.tar.gz
 # Source0-md5:	bc8b01d35349fe45536dd5ecee010c38
 URL:		http://pysnmp.sourceforge.net/
-BuildRequires:	python >= 1:2.4
+BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
-Requires:	python-pyasn1
 Requires:	python-Crypto
+Requires:	python-pyasn1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,13 +58,13 @@ Ten pakiet zawiera przykładowe programy do modułu Pythona pysnmp.
 %setup -q -n %{module}-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_examplesdir}/%{name}-%{version}}
 
-python setup.py install \
+%{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
