@@ -10,6 +10,7 @@ License:	BSD-like
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/p/pysnmp/%{module}-%{version}.tar.gz
 # Source0-md5:	c77a5e2e2424cd6691f0bf7e0ec4b233
+Patch0:		%{module}-binary_mibs.patch
 URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-pythonprov
@@ -56,6 +57,7 @@ Ten pakiet zawiera przykładowe programy do modułu Pythona pysnmp.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
 
 %build
 %{__python} setup.py build
