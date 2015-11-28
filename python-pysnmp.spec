@@ -97,11 +97,11 @@ Ten pakiet zawiera przykładowe programy do modułu Pythona pysnmp.
 
 %build
 %if %{with python2}
-%{__python} setup.py build --build-base build-2
+%py_build
 %endif
 
 %if %{with python3}
-%{__python3} setup.py build --build-base build-3 %{?with_tests:test}
+%py3_build %{?with_tests:test}
 %endif
 
 %install
@@ -109,11 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_examplesdir}}
 
 %if %{with python2}
-%{__python} setup.py \
-	build --build-base build-2 \
-	install --skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" '!' -path '*/v4/smi/mibs/*' | xargs rm
 
@@ -121,11 +117,7 @@ cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %endif
 
 %if %{with python3}
-%{__python3} setup.py \
-	build --build-base build-3 \
-	install --skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py3_install
 
 cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}
 %endif
