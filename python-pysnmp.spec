@@ -13,6 +13,7 @@ Group:		Libraries/Python
 Source0:	http://downloads.sourceforge.net/pysnmp/pysnmp-%{version}.tar.gz
 # Source0-md5:	1f75d3e392a050e84348904fc1be3212
 URL:		http://pysnmp.sourceforge.net/
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python >= 1:2.5
 BuildRequires:	python-distribute
