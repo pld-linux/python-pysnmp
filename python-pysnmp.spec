@@ -16,13 +16,11 @@ URL:		http://pysnmp.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python >= 1:2.5
-BuildRequires:	python-distribute
-BuildRequires:	python-modules
+BuildRequires:	python-setuptools
 %endif
 %if %{with python3}
 BuildRequires:	python3 >= 1:2.3
-BuildRequires:	python3-distribute
-BuildRequires:	python3-modules
+BuildRequires:	python3-setuptools
 %endif
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
