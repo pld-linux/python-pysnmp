@@ -7,7 +7,7 @@ Summary:	SNMP engine for Python
 Summary(pl.UTF-8):	Obsługa SNMP dla Pythona
 Name:		python-%{module}
 Version:	4.2.5
-Release:	7
+Release:	8
 License:	BSD-like
 Group:		Libraries/Python
 Source0:	http://downloads.sourceforge.net/pysnmp/pysnmp-%{version}.tar.gz
@@ -93,6 +93,9 @@ Ten pakiet zawiera przykładowe programy do modułu Pythona pysnmp.
 
 %prep
 %setup -q -n %{module}-%{version}
+
+%{__sed} -i -e '1s,/usr/bin/env python,%{__python},' \
+	tools/libsmi2pysnmp
 
 %build
 %if %{with python2}
